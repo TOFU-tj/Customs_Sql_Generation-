@@ -1,0 +1,55 @@
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+
+# =========================
+# Environment variables
+# =========================
+.env
+
+# =========================
+# Python cache
+# =========================
+__pycache__/
+*.pyc
+
+# =========================
+# Virtual environments
+# =========================
+.venv/
+venv/
+env/
+
+# =========================
+# Jupyter / notebooks
+# =========================
+*.ipynb_checkpoints/
+
+# =========================
+# ML / Models / LoRA
+# =========================
+customs_lora/
+*.bin
+*.safetensors
+*.pt
+*.ckpt
+
+# =========================
+# Training outputs / datasets
+# =========================
+outputs/
+checkpoints/
+train.jsonl
+train_dataset.json
+
+# =========================
+# HuggingFace / Torch cache
+# =========================
+.cache/
+torch_cache/
+
+# =========================
+# Logs
+# =========================
+*.log
