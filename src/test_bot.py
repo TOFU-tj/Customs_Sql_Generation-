@@ -140,6 +140,12 @@ async def handle_message(message: Message):
 # MAIN
 # -------------------------------------------------
 
+async def handler(event : dict, context): 
+    print(f'{event=}')
+    print(f'{context=}')
+    return {"statusCode" : 200, "body" : ""}
+
+
 async def main():
     dp.include_router(router)
     await bot.delete_webhook(drop_pending_updates=True)
