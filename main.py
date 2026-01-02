@@ -173,10 +173,10 @@ SQL:"""
     prompt = "\n\n".join([SYSTEM_RULES.strip(), SCHEMA_BLOCK.strip(), EXAMPLES_BLOCK.strip(), USER_BLOCK.strip()])
 
     output = replicate.run(
-        "meta/meta-llama-3-8b-instruct",
+        "meta/meta-llama-3-70b-instruct",
         input={
             "prompt": prompt,
-            "max_tokens": 1024,
+            "max_tokens": 512,
             "temperature": 0.01,
             "top_p": 0.9,
             "prompt_template": "<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n\n{prompt}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n"
