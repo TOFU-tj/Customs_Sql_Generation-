@@ -20,6 +20,9 @@ __pycache__/
 .venv/
 venv/
 env/
+customs_lora/
+train*.json
+train*.ipynb
 
 # =========================
 # Jupyter / notebooks
@@ -42,6 +45,9 @@ outputs/
 checkpoints/
 train.jsonl
 train_dataset.json
+trash/
+src/
+
 
 # =========================
 # HuggingFace / Torch cache
