@@ -22,11 +22,11 @@ if not BOT_TOKEN or not REPLICATE_API_TOKEN:
 
 os.environ["REPLICATE_API_TOKEN"] = REPLICATE_API_TOKEN
 
-# Загружаем схему
+
 with open("BdDt.json", "r", encoding="utf-8") as f:
     DB_SCHEMA = json.dumps(json.load(f), ensure_ascii=False)
 
-# Инициализация
+
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 router = Router()
@@ -62,6 +62,19 @@ def generate_sql(user_query: str) -> str:
 
 19. Понятие «наименование вида транспортного средства»
     отсутствует в БД и не может быть возвращено.
+20. Термин «количество товаров (в шт.)» означает
+    ТОЛЬКО SUM(CAST(dcltovar.G31_2 AS REAL)).
+    COUNT(*) ЗАПРЕЩЕНО использовать для количества товаров.
+21. COUNT(*) разрешён ТОЛЬКО для:
+    - количества деклараций
+    - количества товарных позиций
+
+22. Количество деклараций = COUNT(DISTINCT dclhead.G073)
+23. Запрещено делить разные сущности:
+    - товары / декларации
+    - позиции / декларации
+    - товары / позиции
+    Числитель и знаменатель ДОЛЖНЫ быть одной природы.
 
 
 """
